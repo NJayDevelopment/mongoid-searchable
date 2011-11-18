@@ -33,7 +33,7 @@ module Mongoid
       # end
       #
       # Returns nothing.
-      def searchable(*fields)
+      def text_searchable(*fields)
         options = { :as => :keywords, :index => true }.merge(fields.extract_options!)
 
         self.keywords_field = options[:as].to_sym
