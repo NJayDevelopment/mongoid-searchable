@@ -5,5 +5,5 @@ class Business
   field :name
   field :street
 
-  searchable :name, :street, :as => :search_fields, :index => false
+  text_searchable :name, :street, :as => :search_fields, :index => false
 end

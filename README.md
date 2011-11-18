@@ -28,7 +28,7 @@ class City
   field :boroughs, :type => Array
   field :officials, :type => Hash
 
-  searchable :name, :population, :boroughs, :officials
+  text_searchable :name, :population, :boroughs, :officials
 end
 ```
 
@@ -72,14 +72,14 @@ City.text_search('rochester').where(:population.lt => 500_000) # => 1 record
 
 ## Customization
 
-You can also pass additional arguments to *searchable* to provide more control over the behavior.
+You can also pass additional arguments to *text_searchable* to provide more control over the behavior.
 
 **Changing the field name:** You can specify the field to use for keyword storage using **as**. The default is to use the *keywords* field:
 
 ```ruby
 class Person
   ...
-  searchable :name, :as => :search_fields
+  text_searchable :name, :as => :search_fields
   ...
 end
 ```
@@ -89,7 +89,7 @@ end
 ```ruby
 class Person
   ...
-  searchable :name, :index => false
+  text_searchable :name, :index => false
   ...
 end
 ```

@@ -8,5 +8,5 @@ class City
   field :boroughs, :type => Array
   field :officials, :type => Hash
 
-  searchable :name, :nickname, :population, :boroughs, :officials
+  text_searchable :name, :nickname, :population, :boroughs, :officials
 end
